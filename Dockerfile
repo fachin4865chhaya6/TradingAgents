@@ -18,6 +18,8 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 COPY --from=builder /opt/venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 
+# Create a non-root user for security; home dir holds app files and any
+# runtime config/logs written by the agent.
 RUN useradd --create-home appuser
 USER appuser
 WORKDIR /home/appuser/app
