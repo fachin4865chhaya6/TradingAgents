@@ -51,7 +51,8 @@ Breaking changes within the 0.x line are called out explicitly.
   hit `UnicodeEncodeError` with the cp1252 default. (#543, #550, #576)
 - Cache and log directories moved to `~/.tradingagents/` to resolve Docker
   permission issues. (#519)
-- **`memory_log_max_entries` default raised from 50 to 100** in my personal
-  setup — I'm running longer backtests and found 50 resolved entries got
-  pruned too aggressively before patterns became visible across a full
-  earnings cycle.
+- **`memory_log_max_entries` default raised from 50 to 100** — 50 entries felt
+  too restrictive when running backtests over several months of data; 100
+  gives a fuller history without a noticeable memory footprint increase.
+  (personal preference — revert if upstreaming)
+- *
