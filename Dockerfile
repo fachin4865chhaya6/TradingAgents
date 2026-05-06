@@ -26,4 +26,7 @@ WORKDIR /home/appuser/app
 
 COPY --from=builder --chown=appuser:appuser /build .
 
+# Expose a volume for persisting logs and output between container runs
+VOLUME ["/home/appuser/app/logs"]
+
 ENTRYPOINT ["tradingagents"]
