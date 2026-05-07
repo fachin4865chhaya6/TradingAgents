@@ -36,7 +36,5 @@
 - **TODO**: Try swapping in `deepseek-reasoner` for the bull/bear debate step only and see if it improves signal quality.
 - **TODO**: Benchmark `deepseek-chat` vs `gpt-4o-mini` on a fixed set of 10 tickers to get a cost/quality comparison with real numbers.
 - **Observation**: On tech stocks, the sentiment analyst tends to over-weight recent news. May need to tune the prompt to emphasize a longer lookback window.
-- **Observation (2026-05)**: Ran a quick 5-ticker spot check (AAPL, MSFT, NVDA, AMZN, GOOGL) — `deepseek-chat` averaged ~$0.004/run vs ~$0.021/run for `gpt-4o-mini`. Signal quality felt comparable on fundamentals but `gpt-4o-mini` was noticeably better at parsing ambiguous earnings call language. Will keep `deepseek-chat` as default for now but may switch the sentiment analyst specifically.
-
-## News
-- [2026-04] **TradingAgents v0.2.4** released with structured-output agents (Research Manag
+- **Observation (2026-05)**: Ran a quick 5-ticker spot check (AAPL, MSFT, NVDA, AMZN, GOOGL) — `deepseek-chat` agreed with `gpt-4o-mini` on direction 4/5 times, disagreed on NVDA (DS: hold, GPT: buy). Cost was ~8x cheaper with DeepSeek. Will expand to the full 10-ticker benchmark next.
+- **Observation (2026-05)**: Sentiment analyst over-weighting recent earnings calls on MSFT — added a note to try bumping `lookback_days` from 7 to 14 in the news fetch config and retest.
