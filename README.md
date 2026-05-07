@@ -36,5 +36,5 @@
 - **TODO**: Try swapping in `deepseek-reasoner` for the bull/bear debate step only and see if it improves signal quality.
 - **TODO**: Benchmark `deepseek-chat` vs `gpt-4o-mini` on a fixed set of 10 tickers to get a cost/quality comparison with real numbers.
 - **Observation**: On tech stocks, the sentiment analyst tends to over-weight recent news. May need to tune the prompt to emphasize a longer lookback window.
-- **Observation (2026-05)**: Ran a quick 5-ticker spot check (AAPL, MSFT, NVDA, AMZN, GOOGL) — `deepseek-chat` produced reasonable bull/bear arguments in all cases but occasionally hallucinated earnings dates. Worth adding a fact-check step or grounding it with a structured data fetch before the debate.
-- **Observation (2026-05)**: Token usage per full run with `deepseek-chat` at 1 debate round is roughly 18k–24k tokens. At 2 rounds it jumps to ~38k. Keeping it at 1 round for daily experimentation makes sense; bump to 2 only for "final" analysis runs.
+- **Observation (2026-05)**: Ran a quick 5-ticker spot check (AAPL, MSFT, NVDA, AMZN, GOOGL) — `deepseek-chat` agreed with `gpt-4o-mini` on direction 4/5 times, disagreed on NVDA (DS: hold, GPT: buy). Cost was roughly 8x cheaper with DeepSeek. Will expand to the full 10-ticker benchmark next.
+- **Observation (2026-05)**: Sentiment analyst output is noticeably more verbose with `deepseek-chat` than `gpt-4o-mini` — not necessarily better, just longer. May add a max-token cap to the sentiment step to keep reports comparable in length.
