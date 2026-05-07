@@ -5,6 +5,10 @@ to analyze markets, manage risk, and execute trading strategies.
 
 Based on the original TauricResearch/TradingAgents project with additional
 enhancements for enterprise use cases.
+
+Personal fork notes:
+- Forked for learning and experimentation with multi-agent trading systems
+- See NOTES.md for personal observations and experiment results
 """
 
 __version__ = "0.1.0"
