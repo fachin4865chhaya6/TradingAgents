@@ -51,8 +51,8 @@ Breaking changes within the 0.x line are called out explicitly.
   hit `UnicodeEncodeError` with the cp1252 default. (#543, #550, #576)
 - Cache and log directories moved to `~/.tradingagents/` to resolve Docker
   permission issues. (#519)
-- **`memory_log_max_entries` default raised from 50 to 100** — in personal
-  testing with a handful of tickers over several months the 50-entry cap
-  caused useful resolved entries to be evicted too aggressively. 100 keeps
-  a fuller history without noticeable overhead.
+- **`memory_log_max_entries` default raised from 50 to 200** — 50 resolved
+  entries felt too small for running backtests over several months of tickers;
+  200 gives a more useful historical context window without a noticeable
+  performance hit. (personal preference)
 - *
