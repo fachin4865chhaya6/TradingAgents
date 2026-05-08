@@ -94,4 +94,5 @@ asyncio_mode = "auto"
 # -p no:warnings keeps output clean during local experimentation
 # Removed -x so the full test suite runs and I can see all failures at once
 # Added --tb=short for more concise tracebacks when debugging test failures
-addopts = "-v -p no:warnings --tb=short"
+# Added --durations=10 to surface the 10 slowest tests — helpful when profiling
+addopts = "-v -p no:warnings --tb=short --durations=10"
