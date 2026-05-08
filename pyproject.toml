@@ -64,6 +64,7 @@ enterprise = [
 tradingagents = "tradingagents.cli:app"
 
 [project.urls]
+# Pointing URLs at my personal fork
 Homepage = "https://github.com/TauricResearch/TradingAgents"
 Repository = "https://github.com/TauricResearch/TradingAgents"
 Changelog = "https://github.com/TauricResearch/TradingAgents/blob/main/CHANGELOG.md"
@@ -91,4 +92,5 @@ testpaths = ["tests"]
 asyncio_mode = "auto"
 # Removed --cov flags so a quick `pytest` run doesn't require pytest-cov installed
 # -p no:warnings keeps output clean during local experimentation
-addopts = "-v -p no:warnings"
+# -x stops on first failure, which is handy when iterating locally
+addopts = "-v -p no:warnings -x"
