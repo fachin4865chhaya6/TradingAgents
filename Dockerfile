@@ -29,4 +29,7 @@ COPY --from=builder --chown=appuser:appuser /build .
 # Expose a volume for persisting logs and output between container runs
 VOLUME ["/home/appuser/app/logs"]
 
+# Also persist results directory so analysis outputs survive container restarts
+VOLUME ["/home/appuser/app/results"]
+
 ENTRYPOINT ["tradingagents"]
