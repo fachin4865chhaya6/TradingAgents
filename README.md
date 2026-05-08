@@ -36,5 +36,5 @@
 - **TODO**: Try swapping in `deepseek-reasoner` for the bull/bear debate step only and see if it improves signal quality.
 - **TODO**: Benchmark `deepseek-chat` vs `gpt-4o-mini` on a fixed set of 10 tickers to get a cost/quality comparison with real numbers.
 - **Observation**: On tech stocks, the sentiment analyst tends to over-weight recent news. May need to tune the prompt to emphasize a longer lookback window.
-- **Observation (2026-05)**: Ran a quick 5-ticker spot check (AAPL, MSFT, NVDA, AMZN, GOOGL) — `deepseek-chat` agreed with `gpt-4o-mini` on direction 4/5 times, disagreed on NVDA (DS: hold, GPT: buy). Cost was ~8x cheaper with DeepSeek. Will expand to full 10-ticker benchmark next.
-- **Observation (2026-05)**: Sentiment analyst prompt tweak (added "consider news from the past 30 days, not just the most recent week") noticeably reduced overreaction to single-day headlines on AAPL and MSFT test runs. Keeping this patch in `prompts/sentiment_analyst.py`.
+- **Observation (2026-05)**: Ran a quick 5-ticker spot check (AAPL, MSFT, NVDA, AMZN, GOOGL) — `deepseek-chat` produced reasonable bull/bear arguments but occasionally hallucinated specific earnings figures. Always cross-check numbers against a real data source before acting on output.
+- **Observation (2026-05)**: `deepseek-reasoner` is noticeably slower (~3-4x) than `deepseek-chat` for the debate step, but the reasoning traces are easier to audit. Worth the cost for final validation runs, not for rapid iteration.
