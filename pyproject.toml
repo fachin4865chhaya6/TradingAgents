@@ -93,4 +93,5 @@ asyncio_mode = "auto"
 # Removed --cov flags so a quick `pytest` run doesn't require pytest-cov installed
 # -p no:warnings keeps output clean during local experimentation
 # -x stops on first failure, which is handy when iterating locally
-addopts = "-v -p no:warnings -x"
+# Removed -x so the full test suite runs and I can see all failures at once
+addopts = "-v -p no:warnings"
