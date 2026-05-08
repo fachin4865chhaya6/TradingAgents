@@ -10,6 +10,7 @@ Personal fork notes:
 - Forked for learning and experimentation with multi-agent trading systems
 - See NOTES.md for personal observations and experiment results
 - Added __author_email__ and __url__ for easier package metadata access
+- Added __author__ and __license__ to __all__ for completeness
 """
 
 __version__ = "0.1.0"
@@ -25,5 +26,7 @@ __all__ = [
     "TradingAgentsGraph",
     "DEFAULT_CONFIG",
     "__version__",
+    "__author__",
+    "__license__",
     "__url__",
 ]
