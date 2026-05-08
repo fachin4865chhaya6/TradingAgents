@@ -11,6 +11,7 @@ Personal fork notes:
 - See NOTES.md for personal observations and experiment results
 - Added __author_email__ and __url__ for easier package metadata access
 - Added __author__ and __license__ to __all__ for completeness
+- Added __author_email__ to __all__ so all metadata fields are consistently exported
 """
 
 __version__ = "0.1.0"
@@ -27,6 +28,7 @@ __all__ = [
     "DEFAULT_CONFIG",
     "__version__",
     "__author__",
+    "__author_email__",
     "__license__",
     "__url__",
 ]
